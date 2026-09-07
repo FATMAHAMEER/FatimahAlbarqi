@@ -1,175 +1,120 @@
-# قالب بورتفوليو · Portfolio Template
+# Fatimah Albarqi Portfolio
 
-بورتفوليو من صفحة واحدة، عربي مع دعم RTL وزرّ للتبديل إلى الإنجليزية.
-A one-page portfolio, Arabic with full RTL support and an English toggle.
+Personal portfolio for **Fatimah Albarqi**, an IT Business Analyst and Project Coordinator focused on business analysis, digital transformation, technical project delivery, and user support.
 
-`React 19` · `Vite` · `Tailwind CSS 4` · `Motion` · `Lenis`
+## Highlights
 
-**كل النصوص هنا نائبة — ضع بياناتك مكانها وسيصبح الموقع لك.**
-**Everything here is a placeholder — fill in your data and it's yours.**
+- Bilingual Arabic/English interface with RTL/LTR language switching
+- Professional experience at SUSF, KFMC, and Niche Office ART-P
+- Education, achievements, awards, volunteer work, projects, and core competencies
+- Custom circular F|A monogram branding
+- EmailJS contact form
+- Motion animations and Lenis smooth scrolling
 
----
+## Technology
 
-# العربية
+`React 19` · `Vite` · `Tailwind CSS 4` · `Motion` · `Lenis` · `EmailJS`
 
-## ١ · ابدأ
-
-اضغط الزرّ الأخضر **Use this template** في أعلى هذه الصفحة، ثم
-**Create a new repository**. حمّل مستودعك الجديد على جهازك ونفّذ:
-
-```bash
-npm install
-npm run dev
-```
-
-افتح الرابط الذي يظهر في الطرفية — الموقع يعمل الآن بنصوص وصور نائبة.
-
-## ٢ · اجعله لك
-
-| ما تريد تغييره | الملف |
-| --- | --- |
-| كل النصوص: اسمك، بريدك، روابطك، مشاريعك | **`src/content.js`** ← الملف المهم |
-| صورتك، بأربع وضعيات | `public/avatar/` |
-| العنوان في تبويب المتصفّح ومعاينة الرابط | `index.html` |
-
-- في `src/content.js` استبدل **القيم** فقط. **لا تغيّر أسماء المفاتيح** — المكوّنات تقرأ منها.
-- في `public/avatar/` استبدل الملفات الأربعة بصورك، بنفس الأسماء:
-  `point` و `think` و `smile` و `wink`. إن استخدمت صيغة أخرى مثل `.webp`، غيّر
-  الامتدادات في `POSES` داخل `src/components/Avatar.jsx`.
-
-هذا كل شيء. باقي الملفات لا تحتاج إلى لمسها.
-
-## ٣ · اختياري
-
-**الخطوط.** التصميم مبني على خطوط **ثمانية**، ورخصتها تمنع نشر ملفاتها فهي ليست
-في المستودع. حمّلها من [thmanyah.com](https://thmanyah.com) وضعها في
-`public/fonts/` بأسماء: `thmanyah-sans-400/500/700` و `thmanyah-display-300/700`
-و `thmanyah-serif-300` بصيغة `woff2`. بدونها الموقع يعمل ويبدو مرتّباً بخطوط النظام.
-
-**نموذج التواصل.** انسخ `.env.example` إلى `.env` واملأ مفاتيح
-[EmailJS](https://dashboard.emailjs.com) الثلاثة. إن تركتها فارغة فالنموذج لا يفشل:
-يفتح تطبيق البريد لدى الزائر بالرسالة جاهزة.
-
-> ⚠️ **قبل النشر:** هذه المفاتيح تُدمج في ملفات الصفحة ويستطيع أي زائر قراءتها.
-> اذهب إلى لوحة EmailJS وحدّد **allowed domains** لنطاقك وفعّل **rate limit**،
-> وإلا استطاع أي أحد الإرسال عبر قالبك.
-
-## ٤ · انشره
-
-```bash
-npm run build
-```
-
-انشر مجلّد `dist/`. على Vercel أو Netlify يكفي ربط المستودع. ضع مفاتيح EmailJS في
-لوحة الاستضافة لا في المستودع، وارفع ملفات الخطوط إلى الاستضافة مباشرة.
-
-لوحة المشاريع على GitHub: [Projects · FATMAHAMEER/FatimahAlbarqi](https://github.com/FATMAHAMEER/FatimahAlbarqi/projects)
-
-> **شرط واحد.** القالب مجاني بالكامل، مقابل أن يبقى سطر **«القالب من …»** ورابطه
-> ظاهرين في تذييل موقعك المنشور. ما عدا ذلك — النصوص والصور والألوان — كلّه لك.
-> راجع [LICENSE](LICENSE).
-
-## أربعة أشياء لا تغيّرها
-
-ليست أذواقاً — تغييرها يكسر شيئاً حقيقياً:
-
-1. **لا تباعد بين الحروف العربية.** الحروف متّصلة، والتباعد يفكّك الكلمة.
-2. **لا خطّ mono مع العربية.** لا يحوي حروفاً عربية، فيستبدله المتصفّح بخطٍّ يكسر الاتصال.
-3. **لا مائل (italic) في العربية.** للتأكيد استخدم خطّ العناوين بالبنفسجي الفاتح.
-4. **ثلاث مجموعات مهارات.** قسم المهارات مبني على شعاعٍ يمسح ثلاثة أعمدة.
-
----
-
-# English
-
-## 1 · Start
-
-Click the green **Use this template** button at the top of this page, then
-**Create a new repository**. Clone your new repo and run:
+## Run Locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open the URL printed in the terminal — the site already runs, with placeholder
-text and placeholder avatars.
+Open the local URL shown in the terminal.
 
-## 2 · Make it yours
+## Production Build
 
-| What you want to change | File |
+```bash
+npm run build
+npm run preview
+```
+
+The production files are generated in `dist/`.
+
+## EmailJS Configuration
+
+Create a `.env` file in the project root with:
+
+```env
+VITE_SERVICE_ID=your_emailjs_service_id
+VITE_TEMPLATE_ID=your_emailjs_template_id
+VITE_PUBLIC_KEY=your_emailjs_public_key
+```
+
+The contact form sends these template variables:
+
+- `name`
+- `from_name`
+- `email`
+- `from_email`
+- `reply_to`
+- `message`
+- `to_name`
+- `title`
+- `time`
+
+Set `{{reply_to}}` as the EmailJS reply-to address. Configure allowed domains and a rate limit before deploying. Never commit the real `.env` file; it is ignored by Git.
+
+## Project Structure
+
+```text
+src/content.js                 Bilingual portfolio content
+src/components/About.jsx       About, education, achievements, awards
+src/components/Experience.jsx  Professional experience
+src/components/Skills.jsx      Core competencies
+src/components/Projects.jsx    Selected projects
+src/components/Contact.jsx     EmailJS contact form
+public/avatar/smile.svg        F|A monogram logo
+```
+
+Most portfolio text is stored in `src/content.js`. Page metadata is in `index.html`.
+
+## GitHub Deployment
+
+```bash
+git add .
+git commit -m "Update portfolio"
+git push origin main
+```
+
+Repository: [FATMAHAMEER/FatimahAlbarqi](https://github.com/FATMAHAMEER/FatimahAlbarqi)
+
+GitHub Projects: [Projects · FATMAHAMEER/FatimahAlbarqi](https://github.com/FATMAHAMEER/FatimahAlbarqi/projects)
+
+For Vercel or Netlify, connect the repository and add the EmailJS variables in the hosting provider's environment settings.
+
+## Commands
+
+| Command | Purpose |
 | --- | --- |
-| All text: your name, email, links, projects | **`src/content.js`** ← the one that matters |
-| Your avatar, in four poses | `public/avatar/` |
-| Browser-tab title and link preview | `index.html` |
+| `npm run dev` | Start the development server |
+| `npm run build` | Create the production build |
+| `npm run preview` | Preview the production build |
+| `npm run lint` | Run Oxlint |
 
-- In `src/content.js`, replace the **values** only. **Do not rename the keys** —
-  the components read them.
-- In `public/avatar/`, replace the four files with your own, same names:
-  `point`, `think`, `smile`, `wink`. If you use another format such as `.webp`,
-  update the extensions in `POSES` inside `src/components/Avatar.jsx`.
+## العربية
 
-That's it. You don't need to touch anything else.
+موقع فاطمة البارقي الشخصي، وهي محللة أعمال تقنية ومنسقة مشاريع متخصصة في تحليل الأعمال، التحول الرقمي، وتسليم المشاريع التقنية.
 
-## 3 · Optional
+يتضمن الموقع الخبرة المهنية، التعليم، الإنجازات، الجوائز، العمل التطوعي، المشاريع، المهارات الأساسية، وشعار F|A المخصص، مع نموذج تواصل متصل بـ EmailJS.
 
-**Fonts.** The design is built around the **thmanyah** typeface. Its license
-forbids redistributing the files, so they are not in this repo. Download them from
-[thmanyah.com](https://thmanyah.com) into `public/fonts/` as
-`thmanyah-sans-400/500/700`, `thmanyah-display-300/700` and `thmanyah-serif-300`
-in `woff2`. Without them the site still works and still looks tidy, using system fonts.
+لتشغيل المشروع:
 
-**Contact form.** Copy `.env.example` to `.env` and fill in the three
-[EmailJS](https://dashboard.emailjs.com) keys. If you leave them empty the form
-doesn't break: it opens the visitor's mail app with the message pre-filled.
+```bash
+npm install
+npm run dev
+```
 
-> ⚠️ **Before you deploy:** these keys get bundled into the page and any visitor
-> can read them. In your EmailJS dashboard, set **allowed domains** to your own
-> domain and enable a **rate limit** — otherwise anyone can send through your template.
-
-## 4 · Deploy
+لتجهيز نسخة الإنتاج:
 
 ```bash
 npm run build
 ```
 
-Publish the `dist/` folder. On Vercel or Netlify, connecting the repo is enough.
-Put the EmailJS keys in the host's dashboard, never in the repo, and upload the
-font files to the host directly.
+يجب إضافة متغيرات EmailJS في ملف `.env` محلياً وعدم رفعه إلى GitHub.
 
-GitHub Projects board: [Projects · FATMAHAMEER/FatimahAlbarqi](https://github.com/FATMAHAMEER/FatimahAlbarqi/projects)
+## License
 
-> **One condition.** The template is completely free, in exchange for keeping the
-> **"Template by …"** line and its link visible in your published site's footer.
-> Everything else — text, images, colors — is yours. See [LICENSE](LICENSE).
-
-## Four things not to change
-
-These aren't preferences — changing them breaks something real:
-
-1. **No letter-spacing on Arabic.** Arabic letters connect; spacing them apart breaks the word.
-2. **No monospace for Arabic.** It has no Arabic glyphs, so the browser substitutes a font that breaks the joins.
-3. **No italics in Arabic.** Emphasise with the display font in light purple instead.
-4. **Three skill groups.** The skills section is built around a beam sweeping three columns.
-
----
-
-## الأوامر · Commands
-
-| | |
-| --- | --- |
-| `npm run dev` | تشغيل خادم التطوير · start the dev server |
-| `npm run build` | بناء نسخة الإنتاج في `dist/` · production build |
-| `npm run preview` | معاينة نسخة الإنتاج محلياً · preview the build |
-| `npm run lint` | فحص الكود · run Oxlint |
-
-## الرخصة · License
-
-[MIT مع شرط الإشارة إلى المصدر](LICENSE) — استخدمه وعدّله وانشر نسختك بحرّية،
-وأبقِ سطر الإشارة في التذييل.
-[MIT with required attribution](LICENSE) — use it, modify it, publish your version
-freely, and keep the credit line in the footer.
-
-الرخصة تشمل الكود فقط؛ الخطوط لها رخصتها الخاصة وليست جزءاً من المستودع.
-The license covers the code only; the fonts carry their own license and are not
-part of this repository.
+See [LICENSE](LICENSE) for the project license.
