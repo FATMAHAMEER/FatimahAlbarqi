@@ -63,6 +63,8 @@ npm run build
 انشر مجلّد `dist/`. على Vercel أو Netlify يكفي ربط المستودع. ضع مفاتيح EmailJS في
 لوحة الاستضافة لا في المستودع، وارفع ملفات الخطوط إلى الاستضافة مباشرة.
 
+لوحة المشاريع على GitHub: [Projects · FATMAHAMEER/FatimahAlbarqi](https://github.com/FATMAHAMEER/FatimahAlbarqi/projects)
+
 > **شرط واحد.** القالب مجاني بالكامل، مقابل أن يبقى سطر **«القالب من …»** ورابطه
 > ظاهرين في تذييل موقعك المنشور. ما عدا ذلك — النصوص والصور والألوان — كلّه لك.
 > راجع [LICENSE](LICENSE).
@@ -134,6 +136,8 @@ npm run build
 Publish the `dist/` folder. On Vercel or Netlify, connecting the repo is enough.
 Put the EmailJS keys in the host's dashboard, never in the repo, and upload the
 font files to the host directly.
+
+GitHub Projects board: [Projects · FATMAHAMEER/FatimahAlbarqi](https://github.com/FATMAHAMEER/FatimahAlbarqi/projects)
 
 > **One condition.** The template is completely free, in exchange for keeping the
 > **"Template by …"** line and its link visible in your published site's footer.
