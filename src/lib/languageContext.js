@@ -1,4 +1,4 @@
 import { createContext } from 'react'
 
 export const LanguageContext = createContext(null)
-export const STORAGE_KEY = 'portfolio-lang'
+export const STORAGE_KEY = 'portfolio-lang-v2'

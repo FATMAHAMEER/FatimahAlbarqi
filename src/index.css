@@ -1,54 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
 
-/* ==========================================================================
-   خطوط ثمانية — تخدم العربية واللاتينية معاً، فحلّت محل ثلاثة خطوط من Google
-   ========================================================================== */
-
-@font-face {
-  font-family: 'Thmanyah Sans';
-  src: url('/fonts/thmanyah-sans-400.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Thmanyah Sans';
-  src: url('/fonts/thmanyah-sans-500.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Thmanyah Sans';
-  src: url('/fonts/thmanyah-sans-700.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Thmanyah Display';
-  src: url('/fonts/thmanyah-display-300.woff2') format('woff2');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Thmanyah Display';
-  src: url('/fonts/thmanyah-display-700.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Thmanyah Serif';
-  src: url('/fonts/thmanyah-serif-300.woff2') format('woff2');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
+/* Default fallbacks only: avoid broken local font files while preserving clean typography. */
 
 /* ==========================================================================
    نظام تصميم — قالب بورتفوليو / Portfolio template design system
@@ -56,31 +9,31 @@
    ========================================================================== */
 
 @theme {
-  /* ---- سُلّم الخلفيات (مُعدّل: فصل حقيقي بين الطبقات) ------------------- */
-  --color-bg: #1f1425;          /* الصفحة — أعمق من الأصل لعمق فاخر        */
-  --color-bg-deep: #140d19;     /* قاع الأقسام — نفس الدرجة 284°، أغمق     */
-  --color-bg-elev: #2d1c33;     /* اللون الأصلي — الآن شريط أقسام مرتفع    */
-  --color-surface: #3e2a48;     /* البطاقات — 1.38:1 فوق الخلفية ✓         */
-  --color-surface-2: #482b52;   /* Accent — تمرير / شرائح / حشوات          */
+  /* ---- palette aligned with the logo ------------------------------------- */
+  --color-bg: #080808;          /* dark luxury background */
+  --color-bg-deep: #0f0f0f;     /* deep surface */
+  --color-bg-elev: #171717;     /* elevated panel */
+  --color-surface: #1d1d1d;     /* cards */
+  --color-surface-2: #2a2826;   /* accent fill */
 
-  /* ---- الهوية البنفسجية ------------------------------------------------ */
-  --color-primary: #8e18b8;     /* تعبئة فقط — ممنوع كنص (2.51:1)          */
-  --color-primary-300: #d181ef; /* نفس الدرجة اللونية 284° — 6.82:1 ✓ AA   */
-  --color-secondary: #6d2c85;   /* منتصف التدرّج / قلب الوهج               */
+  /* ---- warm neutral identity -------------------------------------------- */
+  --color-primary: #e8dccd;     /* ivory / logo accent */
+  --color-primary-300: #f6efe8; /* soft cream highlight */
+  --color-secondary: #c2b1a1;   /* warm taupe */
 
-  /* ---- سُلّم الأبيض (العمود الفقري للواجهة) ---------------------------- */
-  --color-text-1: #ffffff;                    /* 17.7:1 — العناوين والأزرار */
-  --color-text-2: rgb(255 255 255 / 0.72);    /*  9.5:1 — النصوص            */
-  --color-text-3: rgb(255 255 255 / 0.56);    /*  6.2:1 — التعليقات         */
-  --color-line: rgb(255 255 255 / 0.08);
-  --color-line-strong: rgb(255 255 255 / 0.16);
-  --color-fill-1: rgb(255 255 255 / 0.04);
-  --color-fill-2: rgb(255 255 255 / 0.07);
+  /* ---- text and lines --------------------------------------------------- */
+  --color-text-1: #f7f1ea;                    /* warm white */
+  --color-text-2: rgb(247 241 234 / 0.78);    /* body text */
+  --color-text-3: rgb(247 241 234 / 0.62);    /* muted text */
+  --color-line: rgb(247 241 234 / 0.12);
+  --color-line-strong: rgb(247 241 234 / 0.22);
+  --color-fill-1: rgb(247 241 234 / 0.05);
+  --color-fill-2: rgb(247 241 234 / 0.09);
 
   /* ---- الخطوط ---------------------------------------------------------- */
-  --font-sans: "Thmanyah Sans", system-ui, sans-serif;       /* الواجهة    */
-  --font-display: "Thmanyah Display", Georgia, serif;         /* العناوين   */
-  --font-serif: "Thmanyah Serif", Georgia, serif;             /* السرد      */
+  --font-sans: "Segoe UI", "Tahoma", system-ui, sans-serif;  /* الواجهة    */
+  --font-display: "Segoe UI", "Tahoma", Georgia, serif;      /* العناوين   */
+  --font-serif: "Georgia", "Times New Roman", serif;          /* السرد      */
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;      /* الأرقام    */
 
   /* ---- مقياس الطباعة (مرن) --------------------------------------------- */

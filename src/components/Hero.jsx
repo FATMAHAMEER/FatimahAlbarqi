@@ -66,14 +66,14 @@ export function Hero({ booted = true }) {
       <HeroBackground />
 
       <Container className="relative z-10">
-        <div className="max-w-4xl text-start">
-          <h1 className="display text-display text-text-1">
+        <div className="max-w-[880px] text-start">
+          <h1 className="display text-display leading-[0.9] tracking-[-0.05em] text-text-1">
             <MaskedLine delay={0.25} show={booted}>
               {hero.titleBefore}
             </MaskedLine>
             <MaskedLine delay={0.35} show={booted}>
               <span className="accent">{hero.titleAccent}</span>
-              {hero.titleAfter}
+              {' '}{hero.titleAfter}
             </MaskedLine>
           </h1>
 
@@ -81,7 +81,7 @@ export function Hero({ booted = true }) {
             initial={{ opacity: 0, y: 20 }}
             animate={booted ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.7, delay: 0.55, ease: EASE }}
-            className="mt-8 max-w-[58ch] text-body-lg text-text-2"
+            className="mt-8 max-w-[58ch] text-[1.06rem] leading-relaxed text-text-2/90"
           >
             {hero.subtitle}
           </motion.p>
@@ -107,12 +107,12 @@ export function Hero({ booted = true }) {
           initial={{ opacity: 0, scale: 0.85 }}
           animate={booted ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.85 }}
           transition={{ duration: 0.9, delay: 0.8, ease: EASE }}
-          className="pointer-events-none absolute end-4 top-1/2 hidden -translate-y-1/2 lg:block"
+          className="pointer-events-none absolute -end-8 top-1/2 hidden -translate-y-1/2 lg:block"
         >
           <Avatar
-            pose="point"
+            pose="smile"
             glow
-            className="h-56 w-56 animate-float xl:h-72 xl:w-72"
+            className="h-56 w-56 animate-float overflow-hidden rounded-full xl:h-72 xl:w-72"
           />
         </motion.div>
       </Container>

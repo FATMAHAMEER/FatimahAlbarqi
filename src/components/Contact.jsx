@@ -51,7 +51,6 @@ export function Contact() {
 
     setStatus('sending')
     try {
-      // نرسل الاسم نفسه بعدة صيغ حتى يعمل القالب أياً كانت تسمية متغيّراته
       await emailjs.send(
         SERVICE_ID,
         TEMPLATE_ID,
@@ -70,7 +69,8 @@ export function Contact() {
       )
       formRef.current.reset()
       setStatus('success')
-    } catch {
+    } catch (error) {
+      console.error('EmailJS submission failed:', error)
       setStatus('error')
     }
   }

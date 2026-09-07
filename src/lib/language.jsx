@@ -3,9 +3,9 @@ import { CONTENT } from '../content'
 import { LanguageContext, STORAGE_KEY } from './languageContext'
 
 function readInitialLang() {
-  if (typeof window === 'undefined') return 'ar'
+  if (typeof window === 'undefined') return 'en'
   const saved = window.localStorage.getItem(STORAGE_KEY)
-  return saved === 'ar' || saved === 'en' ? saved : 'ar'
+  return saved === 'ar' || saved === 'en' ? saved : 'en'
 }
 
 export function LanguageProvider({ children }) {

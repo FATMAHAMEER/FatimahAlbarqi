@@ -30,7 +30,7 @@ export function About() {
                       الخوذة والشعر بعيدين عن الحدّ الدائري، و overflow-hidden
                       يضمن ألّا يتسرّب شيء خارجه بأي حال. */}
                   <span className="relative flex h-36 w-36 items-center justify-center overflow-hidden rounded-full border border-line bg-surface/50 lg:h-48 lg:w-48">
-                    <Avatar pose="think" alt={PROFILE.name[lang]} className="h-[74%] w-[74%]" />
+                    <Avatar pose="smile" alt={PROFILE.name[lang]} className="h-[74%] w-[74%]" />
                   </span>
                 </div>
               </Reveal>
@@ -46,16 +46,54 @@ export function About() {
               <Reveal delay={0.2} className="mt-10">
                 <div className="card p-6">
                   <p className="label mb-4">{about.education.kicker}</p>
-                  <h3 className="text-[1.05rem] font-semibold leading-relaxed text-text-1">
-                    {about.education.degree}
-                  </h3>
-                  <p className="mt-2 text-[0.95rem] text-text-2">{about.education.school}</p>
-                  {/* يحوي عربية في النسخة العربية، فلا مونو هناك */}
-                  <p className={`mt-3 text-[0.82rem] tabular-nums text-primary-300 ${isRTL ? '' : 'num'}`}>
-                    {about.education.period}
-                  </p>
+                  <div className="space-y-6">
+                    {about.education.entries.map((entry, i) => (
+                      <div key={entry.degree} className={i ? 'border-t border-line pt-5' : ''}>
+                        <h3 className="text-[1.05rem] font-semibold leading-relaxed text-text-1">
+                          {entry.degree}
+                        </h3>
+                        <p className="mt-2 text-[0.95rem] text-text-2">{entry.school}</p>
+                        <p className={`mt-3 text-[0.82rem] tabular-nums text-primary-300 ${isRTL ? '' : 'num'}`}>
+                          {entry.period}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </Reveal>
+
+              <Reveal delay={0.28} className="mt-5">
+                <div className="card p-6">
+                  <p className="label mb-5">{about.achievements.kicker}</p>
+                  <div className="space-y-5">
+                    {about.achievements.entries.map((entry) => (
+                      <div key={entry.title}>
+                        <h3 className="text-[0.98rem] font-semibold leading-relaxed text-text-1">
+                          {entry.title}
+                        </h3>
+                        <p className="mt-1.5 text-[0.9rem] leading-relaxed text-text-2">
+                          {entry.description}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </Reveal>
+
+              {[about.awards, about.volunteer].map((group) => (
+                <Reveal key={group.kicker} delay={0.34} className="mt-5">
+                  <div className="card p-6">
+                    <p className="label mb-5">{group.kicker}</p>
+                    <ul className="space-y-4">
+                      {group.entries.map((entry) => (
+                        <li key={entry} className="border-s border-primary/50 ps-4 text-[0.9rem] leading-relaxed text-text-2">
+                          {entry}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </Reveal>
+              ))}
             </div>
           </div>
 

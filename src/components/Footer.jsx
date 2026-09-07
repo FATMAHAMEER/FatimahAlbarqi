@@ -21,51 +21,22 @@ import { ArrowUp } from './Icons'
  * مكتوب هنا مباشرةً لا في content.js، لأن content.js ملفُّك أنت.
  * Hardcoded here rather than in content.js, because content.js is your file.
  */
-/* الاسم لاتينيٌّ في النسختين، كسطر الحقوق فوقه تماماً — ولذلك يُعزل بـ dir="ltr"
-   داخل الجملة العربية حتى لا يعيد المتصفّح ترتيبه.
-   The name stays Latin in both languages, exactly like the copyright line above,
-   so it is isolated with dir="ltr" inside the Arabic sentence. */
-const CREDIT_NAME = 'Aljazy Banaemah'
-const CREDIT_BEFORE = { ar: 'القالب من', en: 'Template by' }
-const CREDIT_URL = 'https://github.com/aljazikb'
+/* تم حذف سطر الإشارة إلى القالب كما طلبت. */
 
 export function Footer() {
-  const { t, lang } = useLanguage()
+  const { t } = useLanguage()
 
-  /* أعمقُ نقطةٍ في الصفحة، بلا `border-t`: «تواصل» ينتهي عند `bg-deep`
-     فيلتقيه التذييل بنفس اللون — والخطّ الشعري كان سيرسم الحدّ الذي ألغاه
-     التدرّج. */
   return (
-    <footer className="bg-bg-deep py-10">
+    <footer className="bg-bg-deep py-8">
       <Container>
-        <div className="label flex flex-col items-center justify-between gap-5 sm:flex-row">
-          <div className="flex flex-col items-center gap-1.5 sm:items-start">
-            {/* الاسم اللاتيني في النسختين. السطر كلّه لاتيني، فيُعزل بـ dir="ltr"
-                حتى لا يعيد الترتيب البصري خلط «©» بالرقم داخل صفحة عربية. */}
-            <p dir="ltr">
-              © {new Date().getFullYear()} {PROFILE.name.en}
-            </p>
-
-            {/* أخفتُ من سطر الحقوق: إشارةٌ واجبة، لا عنصرٌ يزاحم صاحب الموقع. */}
-            <p className="text-text-3/70">
-              {CREDIT_BEFORE[lang]}{' '}
-              <a
-                href={CREDIT_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                dir="ltr"
-                className="text-text-2 underline decoration-line-strong decoration-from-font
-                           underline-offset-4 transition-colors duration-200
-                           hover:text-primary-300 hover:decoration-primary-300/60"
-              >
-                {CREDIT_NAME}
-              </a>
-            </p>
-          </div>
+        <div className="label flex flex-col items-center justify-between gap-4 sm:flex-row">
+          <p dir="ltr" className="text-text-3/80">
+            © {new Date().getFullYear()} {PROFILE.name.en}
+          </p>
 
           <a
             href="#home"
-            className="tap-target inline-flex items-center justify-center gap-2 transition-colors duration-200 hover:text-text-1"
+            className="tap-target inline-flex items-center justify-center gap-2 text-text-3 transition-colors duration-200 hover:text-text-1"
           >
             {t.footer.top}
             <ArrowUp className="h-3.5 w-3.5" />

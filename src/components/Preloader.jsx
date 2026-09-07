@@ -43,7 +43,6 @@ export function Preloader({ onDone }) {
     <motion.div
       role="status"
       aria-label={t.loading}
-      /* ستارة تُرفع للأعلى فيظهر الموقع من تحتها */
       exit={reduce ? { opacity: 0 } : { y: '-100%' }}
       transition={{ duration: reduce ? 0.25 : 0.9, ease: EASE }}
       className="grain fixed inset-0 z-[100] flex items-center justify-center overflow-hidden bg-bg px-6"
@@ -55,45 +54,25 @@ export function Preloader({ onDone }) {
         transition={{ duration: 0.35, ease: EASE }}
         className="relative z-10"
       >
-        {/* dir=ltr: اسمٌ لاتيني داخل صفحة عربية — يُعزل حتى لا تقلبه المحارف */}
-        <p dir="ltr" className="font-mono text-[clamp(1.3rem,5.5vw,3rem)] leading-none">
-          {/* طبقة شبح تحفظ العرض النهائي، فلا يتراقص السطر مع كل حرف */}
-          <span className="relative block">
-            <span aria-hidden="true" className="invisible whitespace-pre">
-              {NAME}
-            </span>
-
-            <span
-              aria-hidden="true"
-              className="absolute inset-y-0 start-0 flex items-center whitespace-pre"
-            >
-              {NAME.slice(0, typed)
-                .split('')
-                .map((ch, i) => (
-                  <span
-                    key={i}
-                    className={SYNTAX.has(ch) ? 'text-primary-300' : 'text-text-1'}
-                  >
-                    {ch}
-                  </span>
-                ))}
-
-              {/* المؤشّر ثابتٌ أثناء الكتابة، ويومض بعد أن تنتهي */}
-              <span
-                className={`ms-[0.08em] inline-block h-[1.1em] w-[0.45ch] bg-primary-300
-                            ${done ? 'animate-caret' : ''}`}
-              />
-            </span>
-          </span>
-        </p>
-
-        {/* خطٌّ شعري يمتلئ مع الكتابة — التقدّم مقروءٌ بلا نسبة مئوية */}
-        <span aria-hidden="true" className="mt-7 block h-px w-full overflow-hidden bg-line">
-          <span
-            className="block h-full origin-left bg-primary-300 transition-transform duration-200 ease-out"
-            style={{ transform: `scaleX(${typed / NAME.length})` }}
+        <div className="relative mx-auto flex h-[280px] w-[280px] items-center justify-center rounded-full border-[7px] border-[#f5efe9]/90 bg-[#1a1a1a] shadow-[0_0_30px_rgba(245,239,233,0.08)]">
+          <img
+            src="/avatar/smile.svg"
+            alt="Fatimah Albarqi logo"
+            className="h-[200px] w-[200px] object-contain"
           />
-        </span>
+        </div>
+
+        <div className="mt-8 flex justify-center">
+          <div className="flex items-center gap-2">
+            {[0, 1, 2].map((dot) => (
+              <span
+                key={dot}
+                className="h-2.5 w-2.5 rounded-full bg-[#f5efe9] opacity-80"
+                style={{ animationDelay: `${dot * 160}ms` }}
+              />
+            ))}
+          </div>
+        </div>
       </motion.div>
     </motion.div>
   )

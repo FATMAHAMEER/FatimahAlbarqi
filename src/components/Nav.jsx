@@ -63,7 +63,7 @@ export function Nav() {
       />
       <Avatar
         pose="smile"
-        className="h-10 w-10 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/logo:scale-110"
+        className="h-12 w-12 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/logo:scale-110"
       />
     </a>
   )
