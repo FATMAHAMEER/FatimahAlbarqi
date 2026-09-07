@@ -1,0 +1,37 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Environment — real keys never get committed, only .env.example does
+.env
+.env.*
+!.env.example
+
+# خطوط ثمانية — رخصتها تمنع إتاحة ملفات الخط للتحميل على أي منصّة رقمية،
+# والمستودع عامّ. تُحمَّل من thmanyah.com وتُرفع إلى الاستضافة مباشرة.
+# راجعي قسم "الخطوط" في README.
+Thmanyah-Font-Family/
+public/fonts/
+__MACOSX/
+.DS_Store
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

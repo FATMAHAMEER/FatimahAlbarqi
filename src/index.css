@@ -1,0 +1,566 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+/* ==========================================================================
+   خطوط ثمانية — تخدم العربية واللاتينية معاً، فحلّت محل ثلاثة خطوط من Google
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Thmanyah Sans';
+  src: url('/fonts/thmanyah-sans-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Thmanyah Sans';
+  src: url('/fonts/thmanyah-sans-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Thmanyah Sans';
+  src: url('/fonts/thmanyah-sans-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Thmanyah Display';
+  src: url('/fonts/thmanyah-display-300.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Thmanyah Display';
+  src: url('/fonts/thmanyah-display-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Thmanyah Serif';
+  src: url('/fonts/thmanyah-serif-300.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================================================================
+   نظام تصميم — قالب بورتفوليو / Portfolio template design system
+   عربي/إنجليزي · RTL+LTR · داكن · فاخر
+   ========================================================================== */
+
+@theme {
+  /* ---- سُلّم الخلفيات (مُعدّل: فصل حقيقي بين الطبقات) ------------------- */
+  --color-bg: #1f1425;          /* الصفحة — أعمق من الأصل لعمق فاخر        */
+  --color-bg-deep: #140d19;     /* قاع الأقسام — نفس الدرجة 284°، أغمق     */
+  --color-bg-elev: #2d1c33;     /* اللون الأصلي — الآن شريط أقسام مرتفع    */
+  --color-surface: #3e2a48;     /* البطاقات — 1.38:1 فوق الخلفية ✓         */
+  --color-surface-2: #482b52;   /* Accent — تمرير / شرائح / حشوات          */
+
+  /* ---- الهوية البنفسجية ------------------------------------------------ */
+  --color-primary: #8e18b8;     /* تعبئة فقط — ممنوع كنص (2.51:1)          */
+  --color-primary-300: #d181ef; /* نفس الدرجة اللونية 284° — 6.82:1 ✓ AA   */
+  --color-secondary: #6d2c85;   /* منتصف التدرّج / قلب الوهج               */
+
+  /* ---- سُلّم الأبيض (العمود الفقري للواجهة) ---------------------------- */
+  --color-text-1: #ffffff;                    /* 17.7:1 — العناوين والأزرار */
+  --color-text-2: rgb(255 255 255 / 0.72);    /*  9.5:1 — النصوص            */
+  --color-text-3: rgb(255 255 255 / 0.56);    /*  6.2:1 — التعليقات         */
+  --color-line: rgb(255 255 255 / 0.08);
+  --color-line-strong: rgb(255 255 255 / 0.16);
+  --color-fill-1: rgb(255 255 255 / 0.04);
+  --color-fill-2: rgb(255 255 255 / 0.07);
+
+  /* ---- الخطوط ---------------------------------------------------------- */
+  --font-sans: "Thmanyah Sans", system-ui, sans-serif;       /* الواجهة    */
+  --font-display: "Thmanyah Display", Georgia, serif;         /* العناوين   */
+  --font-serif: "Thmanyah Serif", Georgia, serif;             /* السرد      */
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;      /* الأرقام    */
+
+  /* ---- مقياس الطباعة (مرن) --------------------------------------------- */
+  --text-display: clamp(2.75rem, 7vw, 6rem);
+  --text-display--line-height: 1.15;
+  --text-h2: clamp(2rem, 4.5vw, 3.5rem);
+  --text-h2--line-height: 1.25;
+  --text-h3: clamp(1.25rem, 2vw, 1.6rem);
+  --text-h3--line-height: 1.4;
+  --text-body-lg: clamp(1.05rem, 1.3vw, 1.25rem);
+  --text-body-lg--line-height: 1.9;
+  --text-label: 0.78rem;
+  --text-label--line-height: 1;
+
+  /* ---- الحركة ----------------------------------------------------------- */
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-quart: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* ---- الرسوم المتحرّكة -------------------------------------------------- */
+  --animate-float: float 7s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  /* steps(2, jump-none): وميضٌ حادّ كمؤشّر المحرّر، لا تلاشٍ ناعم */
+  --animate-caret: caret 1s steps(2, jump-none) infinite;
+
+  /* ---- الأنصاف والظلال -------------------------------------------------- */
+  --radius-card: 20px;
+  --radius-img: 16px;
+  --shadow-lift: 0 24px 60px -20px rgb(0 0 0 / 0.6);
+  --shadow-glow: 0 0 40px -8px rgb(142 24 184 / 0.45);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text-2);
+    font-family: var(--font-sans);
+    font-weight: 400;
+    overflow-x: hidden;
+  }
+
+  /* العربية أطول عمودياً بسبب النقاط والتشكيل */
+  html[dir="rtl"] body { line-height: 1.9; }
+  html[dir="ltr"] body { line-height: 1.7; }
+
+  h1, h2, h3, h4 {
+    color: var(--color-text-1);
+    font-weight: 600;
+    text-wrap: balance;
+  }
+
+  /* حرِج: التتبّع السالب يكسر اتصال الحروف العربية — لاتيني فقط */
+  html[dir="rtl"] h1, html[dir="rtl"] h2,
+  html[dir="rtl"] h3, html[dir="rtl"] h4 { letter-spacing: 0; }
+  html[dir="ltr"] h1, html[dir="ltr"] h2 { letter-spacing: -0.02em; }
+  html[dir="ltr"] h3, html[dir="ltr"] h4 { letter-spacing: -0.015em; }
+
+  p { text-wrap: pretty; }
+
+  ::selection { background-color: var(--color-primary); color: #fff; }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary-300);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* شريط تمرير مطابق للهوية */
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background: var(--color-bg); }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-surface-2);
+    border-radius: 99px;
+    border: 3px solid var(--color-bg);
+  }
+  ::-webkit-scrollbar-thumb:hover { background: var(--color-secondary); }
+}
+
+@layer utilities {
+  /* مصطلحات تقنية وأرقام لاتينية داخل نص عربي */
+  .ltr {
+    direction: ltr;
+    unicode-bidi: isolate;
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .label {
+    font-family: var(--font-mono);
+    font-size: var(--text-label);
+    color: var(--color-text-3);
+    text-transform: uppercase;
+  }
+  /* اللاتيني: مونو + تتبّع + حروف كبيرة — كلها تليق به. */
+  html[dir="ltr"] .label { letter-spacing: 0.12em; }
+
+  /* العربية: خطّ mono لاتيني بلا حروف عربية، فيسقط النص إلى monospace
+     الاحتياطي ويُفرض عرض ثابت على كل حرف — فتنفصل الحروف المتّصلة.
+     الحلّ: التسميات العربية تستخدم Thmanyah Sans، بلا تتبّع وبلا حروف كبيرة. */
+  html[dir="rtl"] .label {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  /* هدف لمسٍ لا يقلّ عن 44×44.
+
+     على الأجهزة اللمسية وحدها: الإصبع يحتاج المساحة، أما المؤشّر فدقيق —
+     ففرضُها على المكتب كان سيُضخّم شريط التنقّل المضغوط بلا فائدة.
+     `min-*` لا `h-*`، فتغلب المقاسَ المعلن دون أن تُلغي تنسيقه. */
+  @media (pointer: coarse) {
+    .tap-target {
+      min-width: 44px;
+      min-height: 44px;
+    }
+  }
+
+  /* أرقام لاتينية صرفة (تواريخ، عدّادات) — مونو آمن هنا لأنه بلا عربية */
+  .num {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* العناوين الكبيرة — ثمانية Display بوزن خفيف: أناقة تحريرية عند الأحجام الضخمة */
+  .display {
+    font-family: var(--font-display);
+    font-weight: 300;
+  }
+
+  /* كلمة التمييز — نفس العائلة بوزن Bold: تباين الوزن أرقى من تبديل الخط.
+     ويعمل بالعربية والإنجليزية معاً، فلا حاجة لتبديل حسب الاتجاه. */
+  .accent {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--color-primary-300);
+  }
+
+  /* السرد الشخصي — ثمانية Serif Light: فقرات "نبذة" تُقرأ كمقال، لا كواجهة */
+  .prose-serif {
+    font-family: var(--font-serif);
+    font-weight: 300;
+  }
+
+  /* الوهج الشفقي — حيث يعيش البنفسجي بصوت عالٍ */
+  .aurora {
+    position: absolute;
+    inset: -20%;
+    pointer-events: none;
+    z-index: 0;
+    background:
+      radial-gradient(45% 40% at 25% 15%, rgb(142 24 184 / 0.28), transparent 70%),
+      radial-gradient(40% 35% at 80% 45%, rgb(109 44 133 / 0.24), transparent 70%);
+    filter: blur(60px);
+    animation: aurora-drift 22s var(--ease-quart) infinite alternate;
+  }
+
+  /* ---- خلفية الواجهة التفاعلية ------------------------------------------
+     حقل نقاط + بقعة ضوء بنفسجية تتبع المؤشّر.
+     صدى لـ PixelBlast القديم، لكن بـ CSS خالص وبلا WebGL.            */
+
+  .hero-bg {
+    --mx: 50%;
+    --my: 38%;
+  }
+
+  /* حقل النقاط الثابت */
+  .dot-field {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgb(255 255 255 / 0.15) 1px, transparent 1.3px);
+    background-size: 26px 26px;
+    -webkit-mask-image: radial-gradient(ellipse 85% 65% at 50% 38%, #000 15%, transparent 78%);
+    mask-image: radial-gradient(ellipse 85% 65% at 50% 38%, #000 15%, transparent 78%);
+  }
+
+  /* النقاط المضيئة — تظهر فقط داخل نطاق المؤشّر */
+  .dot-field-glow {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, var(--color-primary-300) 1.3px, transparent 1.7px);
+    background-size: 26px 26px;
+    -webkit-mask-image: radial-gradient(240px circle at var(--mx) var(--my), #000 0%, transparent 68%);
+    mask-image: radial-gradient(240px circle at var(--mx) var(--my), #000 0%, transparent 68%);
+    animation: dot-breathe 6s var(--ease-quart) infinite alternate;
+  }
+
+  /* هالة بنفسجية ناعمة حول المؤشّر */
+  .spotlight {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      340px circle at var(--mx) var(--my),
+      rgb(142 24 184 / 0.20),
+      transparent 70%
+    );
+  }
+
+  /* تلاشٍ سفلي حتى يذوب القسم في الذي يليه.
+
+     إلى `bg-deep` لا `bg`: «نبذة» تبدأ الآن من العمق الأغمق، فلو انتهت
+     الواجهة عند لون الصفحة العادي لالتقى الأفتحُ بالأغمق مباشرة — وهو
+     الخطّ الحادّ نفسه الذي أزلناه بين بقية الأقسام. */
+  .hero-fade {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    height: 30%;
+    background: linear-gradient(to bottom, transparent, var(--color-bg-deep));
+  }
+
+  /* ---- الشعاع: قسم المهارات ----------------------------------------------
+     المهارات كلّها مطفأة، والشعاع يُضيء ما يقع تحته وحده.
+
+     الحيلة طبقتان بنفس التخطيط حرفياً: السفلى مطفأة، والعليا نسخةٌ مضيئة
+     مطابقة يُقصّها قناعٌ دائري عند المؤشّر. فالضوء لا يُمرَّر *فوق* النصّ
+     ليغسله — بل يكشف نسخةً مضيئة أصلاً. ولأن القناع متدرّج، تُضاء الشريحة
+     على حافّة الشعاع جزئياً كما يفعل الضوء الحقيقي، لا بقفزةٍ ثنائية.
+
+     شرطُ نجاحها الوحيد: تطابق التخطيط في الطبقتين. أي اختلاف في مقاس شريحة
+     أو تباعد يُظهر النصّ مزدوجاً.                                          */
+
+  /* المسرح — `--bx` موضع الشعاع أفقياً، يمسح ذهاباً وإياباً.
+
+     اسمٌ مستقلّ عن `--mx` عن قصد: تسجيل متغيّرٍ بـ @property يفرض نوعه على
+     كل الصفحة، ولو سجّلت `--mx` كنسبة لبطلت قيمُ الواجهة التي تكتبه بالبكسل
+     من JS، فانكسر ضوء المؤشّر هناك. */
+  .beam-stage {
+    animation: beam-sweep 15s var(--ease-quart) infinite alternate;
+  }
+
+  /* المركبة والمخروط — خلف المحتوى: الشعاع ضوءٌ في الهواء، لا طبقة فوق النصّ */
+  .beam-craft {
+    position: absolute;
+    top: 0;
+    left: var(--bx);
+    z-index: 0;
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+
+  .beam-mark {
+    animation: beam-hover 6s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  }
+
+  /* المخروط: شبه منحرفٍ من الفتحة يتّسع نزولاً، ويخبو قبل أن يصل الأرض */
+  .beam-cone {
+    position: absolute;
+    top: 44px;
+    left: 50%;
+    width: 280px;
+    height: 250px;
+    transform: translateX(-50%);
+    clip-path: polygon(43% 0, 57% 0, 100% 100%, 0 100%);
+    background: linear-gradient(
+      to bottom,
+      rgb(209 129 239 / 0.4),
+      rgb(209 129 239 / 0.07) 60%,
+      transparent
+    );
+    filter: blur(7px);
+  }
+
+  /* الطبقة المضيئة — قناعها بعرض قاعدة المخروط، فيُضاء ما تحته بالضبط */
+  .beam-lit {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    -webkit-mask-image: radial-gradient(150px circle at var(--bx) 50%, #000 20%, transparent 72%);
+    mask-image: radial-gradient(150px circle at var(--bx) 50%, #000 20%, transparent 72%);
+  }
+
+  /* ---- الجوال: يبقى المسح أفقياً، ويطول الشعاع -------------------------
+     الأعمدة تنطبق في عمودٍ واحد طويل. لو بقي القناع دائرةً صغيرة عند منتصف
+     الارتفاع لأضاء المجموعة الوسطى وحدها وبقي أعلى القائمة وأسفلها مطفأين.
+
+     فيصير القناع بيضاوياً عالياً: عرضه ضيّق وارتفاعه يغطّي القائمة كلها —
+     فيمرّ الضوء كشريطٍ رأسي يقطع المجموعات الثلاث معاً وهو يعبر يميناً
+     ويساراً. والمخروط يطول بالمقدار نفسه حتى يبلغ آخر القائمة.            */
+  @media (width < 640px) {
+    .beam-cone {
+      width: 320px;
+      height: 660px;
+    }
+
+    .beam-lit {
+      -webkit-mask-image: radial-gradient(
+        130px 460px at var(--bx) 52%,
+        #000 30%,
+        transparent 78%
+      );
+      mask-image: radial-gradient(130px 460px at var(--bx) 52%, #000 30%, transparent 78%);
+    }
+  }
+
+  /* التسمية تُضاء مع شرائحها */
+  .beam-lit .label {
+    color: var(--color-primary-300);
+  }
+
+  /* نجومٌ متفرّقة — مواضع يدوية، فتبدو عشوائية. شبكةٌ منتظمة كانت ستُقرأ
+     كنقشٍ لا كسماء، ولتعارضت مع حقل نقاط الواجهة. */
+  .space-stars {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      radial-gradient(1.6px 1.6px at 14% 24%, rgb(255 255 255 / 0.55), transparent 100%),
+      radial-gradient(1.2px 1.2px at 71% 13%, rgb(255 255 255 / 0.4), transparent 100%),
+      radial-gradient(1.4px 1.4px at 38% 72%, rgb(255 255 255 / 0.3), transparent 100%),
+      radial-gradient(1.1px 1.1px at 88% 57%, rgb(255 255 255 / 0.45), transparent 100%),
+      radial-gradient(1.5px 1.5px at 58% 88%, rgb(255 255 255 / 0.25), transparent 100%),
+      radial-gradient(1.2px 1.2px at 26% 52%, rgb(255 255 255 / 0.35), transparent 100%);
+  }
+
+  /* ---- طرفا القسم يغمقان -------------------------------------------------
+     كل قسم يغمق نحو طرفيه معاً، فيُقرأ الحدّ بين قسمين كتغيّرٍ في العمق لا
+     كخطٍّ مرسوم.
+
+     التماثل شرط: لو غمقت النهاية وحدها، لانطفأ القسم تدريجياً ثم بدأ الذي
+     يليه من سطوعه الكامل دفعةً واحدة — فيظهر بالضبط الخطُّ الحادّ الذي نريد
+     إزالته. الطرفان معاً يجعلان الحدّ منخفضاً من الجهتين.
+
+     التدرّج على خلفية القسم نفسه لا على عنصرٍ زائد أو `::after`: خلفية العنصر
+     تُرسم تحت محتواه دائماً، فلا يمرّ الظلام فوق نصٍّ ولا يلزم z-index.
+
+     وطوله ثابت بالبكسل لا بالنسبة — فلو كان نسبةً لطال الظلام في الأقسام
+     الطويلة وقصُر في القصيرة، فاختلف عمق الحدّ من قسمٍ لآخر.               */
+
+  .section-fade,
+  .section-fade-over {
+    --fade: linear-gradient(
+      to bottom,
+      var(--color-bg-deep) 0,
+      rgb(20 13 25 / 0.5) 96px,
+      transparent 260px,
+      transparent calc(100% - 260px),
+      rgb(20 13 25 / 0.5) calc(100% - 96px),
+      var(--color-bg-deep) 100%
+    );
+  }
+
+  .section-fade {
+    background-image: var(--fade);
+  }
+
+  /* نسخةٌ فوقيّة لقسمٍ فيه طبقةٌ مطلقة (كالشفق في «تواصل»).
+
+     الطبقة المطلقة تُرسم فوق خلفية القسم، فتُبطل تدرّجها وتُعيد إضاءة الطرفين.
+     هنا يعلوها التدرّج بدلاً من أن يقبع تحتها. يبقى دون محتوى القسم لأنه
+     مغلّف بـ `z-10`. */
+  .section-fade-over {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: var(--fade);
+  }
+
+  /* ---- النسيج الداكن — الموقع كله -----------------------------------------
+     حبيباتٌ داكنة + تبقّعٌ سحابي، خلف المحتوى مباشرة.
+
+     سرّ بقائه داكناً: الضجيج مُتماثل حول الرمادي المتوسّط. `feComponentTransfer`
+     بميلٍ 2.4 وتقاطعٍ −0.7 يمرّ بـ 0.5 → 0.5 بالضبط، فيمدّ المدى إلى أسودٍ
+     وأبيضٍ حول نقطةٍ محايدة. و`overlay` فوق منتصف المدى لا يغيّر شيئاً — فما
+     يضيفه النسيج هو حبيبةٌ فاتحة وحبيبةٌ غامقة بالتساوي، لا رفعٌ للسطوع.
+     (النسخة السابقة كانت على `screen`، وهو يُضيف ضوءاً فقط — فأفتحت الخلفية
+     من rgb(37,23,43) إلى rgb(57,44,63)، وهو نقيض «داكن».)
+
+     `feFuncA` يثبّت الشفافية على 1: مخرَج feTurbulence يشوّش قناة الألفا أيضاً،
+     ولو تُرك لتفاوتت شفافية الطبقة نفسها فاختلّ الدمج.
+
+     و`z-index: -1` يضعه تحت النصّ لا فوقه — فلا يمسّ تباين حرفٍ واحد.        */
+
+  .grain::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.5;
+    mix-blend-mode: overlay;
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='linear' slope='2.4' intercept='-0.7'/%3E%3CfeFuncG type='linear' slope='2.4' intercept='-0.7'/%3E%3CfeFuncB type='linear' slope='2.4' intercept='-0.7'/%3E%3CfeFuncA type='linear' slope='0' intercept='1'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='420'%3E%3Cfilter id='c'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.02' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='linear' slope='1.5' intercept='-0.25'/%3E%3CfeFuncG type='linear' slope='1.5' intercept='-0.25'/%3E%3CfeFuncB type='linear' slope='1.5' intercept='-0.25'/%3E%3CfeFuncA type='linear' slope='0' intercept='1'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23c)'/%3E%3C/svg%3E");
+    background-size:
+      220px 220px,
+      780px 780px;
+  }
+
+  /* الحُبيبات — تقتل تدرّج الألوان وتعطي إحساساً "غالياً" */
+  .grain::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* بطاقة زجاجية — الارتفاع بالحدود البيضاء لا بالتعبئة وحدها */
+  .card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-card);
+    transition:
+      border-color 300ms var(--ease-quart),
+      background-color 300ms var(--ease-quart),
+      transform 300ms var(--ease-expo),
+      box-shadow 300ms var(--ease-quart);
+  }
+  .card:hover {
+    border-color: rgb(209 129 239 / 0.4);
+    background-color: var(--color-surface-2);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lift);
+  }
+
+  /* رابط بخطٍّ سفلي ينساب من جهة البداية */
+  .link-wipe {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    transition: background-size 350ms var(--ease-expo);
+  }
+  html[dir="ltr"] .link-wipe { background-position: left bottom; }
+  .link-wipe:hover { background-size: 100% 1px; }
+}
+
+@keyframes aurora-drift {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(4%, -3%, 0) scale(1.12); }
+}
+
+@keyframes dot-breathe {
+  0%   { opacity: 0.55; }
+  100% { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-1.5deg); }
+  50%      { transform: translateY(-14px) rotate(1.5deg); }
+}
+
+/* موضع الشعاع. التسجيل بـ @property هو ما يجعل المتغيّر قابلاً للتحريك —
+   المتغيّرات غير المسجّلة تقفز بين القيمتين بلا تدرّج. */
+@property --bx {
+  syntax: "<length-percentage>";
+  inherits: true;
+  initial-value: 50%;
+}
+
+@keyframes beam-sweep {
+  from { --bx: 17%; }
+  to   { --bx: 83%; }
+}
+
+/* ترجرجٌ خفيف للمركبة — تطفو، لا تنزلق كملصق */
+@keyframes beam-hover {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-9px); }
+}
+
+@keyframes caret {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* إتاحة الوصول — غير قابل للتفاوض */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .aurora { animation: none; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
