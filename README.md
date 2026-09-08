@@ -113,7 +113,6 @@ npm run dev
 npm run build
 ```
 
-يجب إضافة متغيرات EmailJS في ملف `.env` محلياً وعدم رفعه إلى GitHub.
 
 ## License
 
